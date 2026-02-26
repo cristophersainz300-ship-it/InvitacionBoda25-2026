@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invitación | Boda</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<div id="musicHint" class="musicHint">
+  ✨ Toca la pantalla para activar la música
+</div>
+<body class="paper">
+
+  <header id="hero" class="hero" style="--hero:url('assets/hero.jpg')">
+    <div class="overlay"></div>
+    <div class="heroContent">
+
+  <p class="verseTop">
+    “MEJOR SON DOS QUE UNO” · “EL AMOR NUNCA FALLA”
+    <br>
+    (Eclesiastés 4:9) · (1 Corintios 13:8)
+  </p>
+
+  <h1 class="big">NOS CASAMOS</h1>
+
+  <h2 class="namesBig">JARED Y ABIGAIL</h2>
+
+  <p class="parentsTitle">En Compañía De Nuestros Padres:</p>
+
+  <div class="parentsGrid">
+    <div>
+      Julio Cesar Collazo Reyes<br>
+      Ma. Del Carmen Lara Montoya
+    </div>
+
+    <div>
+      Adalberto Martínez Caceres<br>
+      Elsa Martínez García
+    </div>
+  </div>
+
+  <p class="inviteText">Tenemos El Deseo De Invitarles</p>
+
+  <h2 class="weddingBig">A NUESTRA BODA</h2>
+
+  <p class="dateHero">
+    EL LUNES <span class="dateBig">25</span> DE MAYO DEL <span class="dateBig">2026</span>
+  </p>
+
+</div>
+  </header>
+
+  <section class="wrap">
+  <article class="panel loveFrame center reveal" id="loveSection">
+    <div class="loveBorder">
+      <p class="loveTitle">Unas palabras</p>
+
+      <!-- Aquí aparecerán palabra por palabra -->
+      <p class="loveText" id="loveText"
+         data-text="El amor nos ah guiado hasta este momento y hemos decidido unir nuestras vidas donde un nuevo capitulo comienza. Queremos junto a ti hacer de este dia especial, un dia inolvidable">
+      </p>
+
+      <!-- Confetti (aparece al terminar) -->
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+    </div>
+  </article>
+</section>
+
+  <!-- LUGARES -->
+  <section class="wrap">
+    <div class="grid2">
+      <article class="panel reveal">
+        <h3>Discurso público</h3>
+        <p><strong>Hora:</strong> 3:00 PM</p>
+        <p><strong>Lugar:</strong> Salón del Reino de los Testigos de Jehová “Canales”</p>
+        <p class="muted">
+          Calle Servando Canales Poniente #508, entre Manuel Cavazos Lerma y Condueños, Cd. Mante, Tamps.
+        <a class="btn ghost mapBtn"
+          href="https://maps.google.com/?q=Salón+del+Reino+de+los+Testigos+de+Jehová+Canales,+Ciudad+Mante,+Tamaulipas"
+         target="_blank" rel="noopener">
+         <span class="mapIcon" aria-hidden="true">📍</span>
+         <span>Cómo llegar</span>
+        </a>
+      </article>
+
+      <article class="panel reveal">
+        <h3>Recepción</h3>
+        <p><strong>Hora:</strong> 5:00 PM</p>
+        <p><strong>Lugar:</strong> Hotel JJ · Salón Candiles</p>
+        <p class="muted">Juárez 1303, Río Mante, 89845 Cdad. Mante, Tamps.</p>
+        <a class="btn ghost mapBtn"
+          href="https://maps.google.com/?q=Hotel+JJ+Inn,+Juárez+1303,+Río+Mante,+Tamaulipas"
+         target="_blank" rel="noopener">
+         <span class="mapIcon" aria-hidden="true">📍</span>
+         <span>Cómo llegar</span>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CUENTA REGRESIVA -->
+  <section class="wrap">
+    <article class="panel center reveal">
+      <h3>Cuenta regresiva</h3>
+      <p class="muted">Hacia el discurso público (25 mayo 2026 · 3:00 PM)</p>
+
+      <div class="countdown">
+        <div class="cdBox"><b id="d">--</b><span>Días</span></div>
+        <div class="cdBox"><b id="h">--</b><span>Horas</span></div>
+        <div class="cdBox"><b id="m">--</b><span>Min</span></div>
+        <div class="cdBox"><b id="s">--</b><span>Seg</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- PROGRAMA -->
+  <section class="wrap">
+    <article class="panel reveal">
+      <h3>Itinerario</h3>
+      <ol class="timeline">
+        <li><span>3:00 PM</span> Discurso público</li>
+        <li><span>5:00 PM</span> Recepción (Salón Candiles · Hotel JJ)</li>
+        <li><span>5:20 PM</span> Comida</li>
+        <li><span>6:00 PM</span> Fotos por mesas</li>
+        <li><span>6:40 PM</span> Vals de los novios</li>
+        <li><span>6:45 PM</span> Vals con familia</li>
+        <li><span>6:50 PM</span> Vals con matrimonios</li>
+        <li><span>7:00 PM</span> Brindis</li>
+        <li><span>7:10 PM</span> Inicia baile</li>
+        <li><span>7:50 PM</span> Pastel</li>
+        <li><span>8:30 PM</span> Mesa de snack</li>
+      </ol>
+    </article>
+  </section>
+
+  <!-- VESTIMENTA -->
+  <section class="wrap">
+  <article class="dressCard reveal">
+    <div class="dressHeader">
+      <h3>Vestimenta</h3>
+      <p class="dressTag">Formal</p>
+    </div>
+
+    <div class="dressBody">
+      <div class="dressImgWrap">
+        <img src="assets/vestimenta.jpg" alt="Vestimenta formal" loading="lazy">
+      </div>
+
+      <div class="dressText">
+        <p class="muted dressQuote">
+          Preferimos que elija “ropa apropiada y arreglarse con modestia y buen juicio”. Además,
+          debería mantener una apariencia que refleje su “devoción a Dios”. (1 Timoteo 2:9, 10)
+        </p>
+
+        <hr class="dressLine">
+
+        <p class="dressNote">
+          <strong>Importante:</strong> Se reserva el color <strong>blanco</strong> y <strong>verde olivo</strong> para las damas de honor.
+        </p>
+      </div>
+    </div>
+  </article>
+</section>
+
+  <!-- GALERÍA -->
+  <section class="wrap">
+    <article class="panel reveal">
+      <h3>✨Nuestra historia en fotos✨</h3>
+     
+      <div class="gallery">
+        <img src="assets/fotos/1.jpg" alt="Foto 1" loading="lazy" />
+        <img src="assets/fotos/2.jpg" alt="Foto 2" loading="lazy" />
+        <img src="assets/fotos/3.jpg" alt="Foto 3" loading="lazy" />
+        <img src="assets/fotos/4.jpg" alt="Foto 4" loading="lazy" />
+        <img src="assets/fotos/5.jpg" alt="Foto 5" loading="lazy" />
+        <img src="assets/fotos/6.jpg" alt="Foto 6" loading="lazy" />
+      </div>
+
+      <div class="lightbox" id="lightbox">
+        <button class="lbClose" id="lbClose" type="button">✕</button>
+        <img id="lbImg" alt="Vista ampliada" />
+      </div>
+    </article>
+  </section>
+
+  <!-- RSVP -->
+  <section class="wrap">
+    <article class="panel accent reveal">
+      <h3>Confirmación (RSVP)</h3>
+      <p class="muted">Por favor confirma tu asistencia (nombre y número de personas).</p>
+
+      <div class="rsvpGrid">
+        <!-- WhatsApp simple -->
+        <div class="rsvpBox">
+          <h4>Confirmar por WhatsApp</h4>
+          <p class="muted">Se abrirá WhatsApp con el mensaje listo.</p>
+          <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+        </div>
+
+        <!-- Formulario opcional -->
+        <div class="rsvpBox">
+          <h4>Confirmar con formulario</h4>
+          <p class="muted">Si prefieres, llena el formulario.</p>
+          <a class="btn ghost" href="PEGAR_AQUI_TU_LINK_DE_GOOGLE_FORMS" target="_blank" rel="noopener">
+            Abrir formulario RSVP
+          </a>
+        </div>
+      </div>
+
+      <!-- Confirmación rápida (UNA SOLA VEZ) -->
+      <div class="rsvpForm reveal">
+        <h4>Confirmación rápida</h4>
+        <p class="muted">Escribe tu nombre y cuántas personas asistirán. Al enviar, se abrirá WhatsApp con el mensaje listo.</p>
+
+        <div class="rsvpInputs">
+          <label class="rsvpLabel">
+            Nombre de quien confirma
+            <input id="rsvpName" class="rsvpInput" type="text" placeholder="Ej. María Pérez" />
+          </label>
+
+          <label class="rsvpLabel">
+            Número de personas
+            <input id="rsvpCount" class="rsvpInput" type="number" min="1" max="20" placeholder="Ej. 2" />
+          </label>
+
+          <button id="rsvpSend" class="btn" type="button">Enviar confirmación</button>
+        </div>
+
+        <p id="rsvpMsg" class="tiny muted"></p>
+      </div>
+
+    </article>
+  </section>
+
+  <footer class="footer">
+    <p class="muted">Con cariño, Jared & Abigail</p>
+  </footer>
+
+  <audio id="bgm" loop preload="auto">
+  <source src="assets/music.m4a" type="audio/mp4">
+  <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Si tu app.js NO usa Firebase todavía, deja así -->
+  <script src="app.js"></script>
+
+  <!-- Si ya usas Firebase (type="module"), entonces cambia a:
+  <script type="module" src="app.js"></script>
+  -->
+
+</body>
+</html>

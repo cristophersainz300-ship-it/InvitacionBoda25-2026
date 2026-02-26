@@ -1,0 +1,734 @@
+:root{
+  --paper:#f6f2ee;
+  --ink:#141414;
+  --muted:#5e5e5e;
+  --gold:#c7a76a;
+  --line:rgba(20,20,20,.12);
+  --radius:18px;
+  --shadow: 0 18px 60px rgba(0,0,0,.18);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: Georgia, "Times New Roman", serif;
+  color:var(--ink);
+}
+
+.paper{ background: var(--paper); }
+
+/* =========================
+   HERO (portada)
+========================= */
+.hero{
+  position:relative;
+  min-height: 80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+  background-image: var(--hero);
+  background-size: cover;
+  background-position:center;
+  background-attachment: fixed; /* parallax PC */
+  transform: translateZ(0);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.7));
+}
+
+.heroContent{
+  position:relative;
+  text-align:center;
+  color:white;
+  max-width:980px;
+  animation: fadeUp .8s ease both;
+}
+
+/* ===== NUEVA PORTADA ESTILO INVITACIÓN ===== */
+.verseTop{
+  font-size:14px;
+  letter-spacing:1px;
+  opacity:.95;
+  margin:0 0 18px;
+  text-transform:uppercase;
+}
+
+.big{
+  font-size: clamp(44px, 6vw, 78px);
+  letter-spacing:3px;
+  margin:0;
+}
+
+.namesBig{
+  margin:18px 0 12px;
+  font-size: clamp(30px,4vw,52px);
+  letter-spacing:12px;
+  font-weight:400;
+}
+
+/* (opcional) brillo suave también en JARED Y ABIGAIL */
+.namesBig{
+  text-shadow:
+    0 0 10px rgba(199,167,106,.25),
+    0 0 26px rgba(199,167,106,.18);
+}
+
+.parentsTitle{
+  margin:12px 0;
+  font-size:24px;
+  letter-spacing:1px;
+}
+
+.parentsGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  max-width:820px;
+  margin:14px auto 18px;
+  font-size:32px;
+  line-height:1.6;
+}
+
+/* ✅ Para que NO se partan nombres en PC */
+.parentsGrid div{
+  white-space: nowrap;
+}
+
+/* ✨ Brillo dorado suave para nombres de padres */
+.parentsGrid div{
+  text-shadow:
+    0 0 10px rgba(199,167,106,.22),
+    0 0 28px rgba(199,167,106,.14);
+}
+
+.inviteText{
+  margin:20px 0 8px;
+  font-size:32px;
+  letter-spacing:1px;
+}
+
+.weddingBig{
+  margin:0;
+  font-size: clamp(38px,5vw,72px);
+  letter-spacing:4px;
+}
+
+.dateHero{
+  margin-top:14px;
+  letter-spacing:4px;
+  font-size:18px;
+  text-transform:uppercase;
+}
+
+.dateBig{
+  font-size:42px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  border:1px solid var(--gold);
+  background:linear-gradient(180deg,#d4b77b,#c7a76a);
+  color:#111;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  transition:.2s;
+}
+
+.btn:hover{ transform:translateY(-2px); }
+
+.btn.ghost{
+  background:transparent;
+  border:1px solid white;
+  color:white;
+}
+
+.heroActions{ margin-top:22px; }
+
+/* =========================
+   SECCIONES (wrap) premium
+========================= */
+.wrap{
+  width:90%;
+  max-width:1000px;
+  margin:52px auto; /* sutil */
+  padding: 10px 0;
+  position: relative;
+}
+
+/* separador dorado entre secciones */
+.wrap::before{
+  content:"";
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(240px, 68%);
+  height:1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(199,167,106,.70),
+    transparent
+  );
+  opacity:.75;
+}
+
+/* no mostrar separador en la primera sección después del hero */
+.wrap:first-of-type::before{ display:none; }
+
+/* halo suave detrás de cada sección */
+.wrap::after{
+  content:"";
+  position:absolute;
+  inset:-26px -10px;
+  background: radial-gradient(closest-side at 50% 28%,
+    rgba(199,167,106,.08),
+    transparent 72%
+  );
+  pointer-events:none;
+  z-index:0;
+}
+
+/* contenido arriba del halo */
+.wrap > *{ position:relative; z-index:1; }
+
+/* =========================
+   PANEL (tarjetas) premium
+========================= */
+.panel{
+  background: rgba(255,255,255,.92);
+  padding:28px;
+  border-radius:22px;
+  border: 1px solid rgba(20,20,20,.08);
+  box-shadow: 0 14px 40px rgba(0,0,0,.07);
+  animation: fadeUp .6s ease both;
+}
+
+.panel h3{ margin-top:0; }
+
+.panel.accent{
+  border: 1px solid rgba(199,167,106,.55);
+  box-shadow: 0 16px 45px rgba(199,167,106,.12);
+}
+
+.panel .btn{ margin-top:12px; }
+
+/* =========================
+   GRID
+========================= */
+.grid2{
+  display:grid;
+  gap:22px;
+  grid-template-columns:repeat(2,1fr);
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline{
+  padding-left:20px;
+  line-height:1.8;
+}
+.timeline li{ margin-bottom:6px; }
+.timeline span{
+  font-weight:bold;
+  display:inline-block;
+  min-width:90px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.center{ text-align:center; }
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.cdBox{
+  background:white;
+  border-radius:16px;
+  padding:15px;
+  width:110px;
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+.cdBox b{
+  display:block;
+  font-size:26px;
+}
+
+.cdBox span{
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* =========================
+   GALERÍA
+========================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.gallery img:hover{ transform:scale(1.03); }
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.8);
+  z-index:50;
+}
+
+.lightbox.open{ display:flex; }
+
+.lightbox img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:20px;
+}
+
+.lbClose{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* =========================
+   RSVP
+========================= */
+.rsvpGrid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(2,1fr);
+}
+
+.rsvpBox{
+  background:rgba(255,255,255,.7);
+  padding:20px;
+  border-radius:15px;
+}
+
+/* Confirmación rápida */
+.rsvpForm{
+  margin-top: 18px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(20,20,20,.10);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.rsvpInputs{
+  display:grid;
+  gap:12px;
+  margin-top:12px;
+  grid-template-columns: 1fr 1fr auto;
+  align-items:end;
+}
+
+.rsvpLabel{
+  display:grid;
+  gap:6px;
+  font-weight:700;
+}
+
+.rsvpInput{
+  padding:12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(20,20,20,.18);
+  outline:none;
+  font-family: inherit;
+}
+
+.rsvpInput:focus{
+  border-color: rgba(199,167,106,.75);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+  text-align:center;
+  padding:50px 20px;
+  color:var(--muted);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(20px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* Scroll Reveal tipo Canva (borroso → nítido) */
+.reveal{
+  opacity: 0;
+  transform: translateY(22px) scale(.99);
+  filter: blur(6px);
+  transition:
+    opacity .9s ease,
+    transform .9s ease,
+    filter .9s ease;
+  will-change: opacity, transform, filter;
+}
+
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+/* =========================
+   Mensaje novios (marco dorado + palabra por palabra)
+========================= */
+.loveFrame{ overflow: hidden; }
+
+.loveBorder{
+  position: relative;
+  border-radius: 22px;
+  padding: 26px 22px;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(199,167,106,.55);
+  box-shadow: 0 18px 55px rgba(199,167,106,.10);
+}
+
+.loveBorder::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(199,167,106,.35);
+  pointer-events:none;
+}
+
+.loveBorder::after{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background: radial-gradient(closest-side at 50% 20%, rgba(199,167,106,.14), transparent 70%);
+  pointer-events:none;
+  opacity:.8;
+}
+
+.loveTitle{
+  margin: 0 0 10px;
+  letter-spacing:.18em;
+  text-transform: uppercase;
+  font-size:.82rem;
+  color: rgba(20,20,20,.65);
+}
+
+.loveText{
+  margin: 0 auto;
+  max-width: 760px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: rgba(20,20,20,.90);
+}
+
+/* Palabra por palabra */
+.loveText .w{
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(8px);
+  display: inline-block;
+  transition: opacity .45s ease, transform .45s ease, filter .45s ease;
+}
+
+.loveText .w.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Confetti */
+.confetti{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.confetti i{
+  position:absolute;
+  top:-12px;
+  width:8px;
+  height:14px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: confettiFall var(--dur) ease-in forwards;
+  transform: translateY(0) rotate(var(--rot));
+  filter: saturate(1.1);
+}
+
+@keyframes confettiFall{
+  0%   { opacity:0; transform: translateY(-10px) rotate(var(--rot)); }
+  10%  { opacity:.95; }
+  100% { opacity:0; transform: translateY(520px) rotate(calc(var(--rot) + 220deg)); }
+}
+
+/* =========================
+   Botón MAPA dorado (resalta)
+========================= */
+.mapBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+  padding:12px 18px;
+
+  border-radius:14px;
+  border:2px solid rgba(199,167,106,.78);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.88),
+    rgba(255,255,255,.66)
+  );
+
+  color:#141414;
+  font-weight:700;
+
+  box-shadow:
+    0 10px 28px rgba(199,167,106,.20),
+    inset 0 0 0 1px rgba(255,255,255,.70);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.mapIcon{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+
+  background: linear-gradient(180deg,#d8bc82,#c7a76a);
+  color:#111;
+
+  box-shadow: 0 6px 14px rgba(199,167,106,.38);
+  font-size:1rem;
+}
+
+.mapBtn:hover{
+  transform: translateY(-2px);
+  border-color: rgba(199,167,106,1);
+  box-shadow:
+    0 16px 36px rgba(199,167,106,.32),
+    inset 0 0 0 1px rgba(255,255,255,.88);
+}
+
+.mapBtn:active{
+  transform: translateY(0) scale(.98);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .grid2{ grid-template-columns:1fr; }
+  .gallery{ grid-template-columns:repeat(2,1fr); }
+  .rsvpGrid{ grid-template-columns:1fr; }
+  .wrap{ margin:44px auto; }
+  .panel{ padding:22px; }
+
+  /* en móvil permitimos saltos para que no se salga */
+  .parentsGrid{ grid-template-columns:1fr; gap:14px; font-size:20px; }
+  .parentsGrid div{ white-space: normal; }
+
+  .namesBig{ letter-spacing:4px; font-size:32px; }
+  .inviteText{ font-size:20px; }
+  .dateBig{ font-size:34px; }
+}
+
+@media (max-width: 780px){
+  .rsvpInputs{ grid-template-columns: 1fr; }
+}
+
+/* ===== Mensaje activar música ===== */
+.musicHint{
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: rgba(20,20,20,.75);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+
+  font-size: 14px;
+  letter-spacing: .4px;
+
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.musicHint.show{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Brillo dorado suave cuando inicia la música */
+.hero.heroGlow .overlay{
+  background: linear-gradient(180deg,
+    rgba(199,167,106,.18),
+    rgba(0,0,0,.70)
+  );
+}
+
+/* ===== Código de vestimenta (marco dorado + negro) ===== */
+.dressCard{
+  background: rgba(10,10,10,.88);
+  color: white;
+  border-radius: 22px;
+  padding: 22px;
+  border: 2px solid rgba(199,167,106,.85);
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+  position: relative;
+  overflow: hidden;
+}
+
+/* borde interno dorado */
+.dressCard::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(199,167,106,.45);
+  pointer-events:none;
+}
+
+.dressHeader{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(199,167,106,.35);
+  position: relative;
+  z-index: 1;
+}
+
+.dressHeader h3{
+  margin:0;
+  letter-spacing: .06em;
+}
+
+.dressTag{
+  margin:0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(199,167,106,.65);
+  background: rgba(199,167,106,.14);
+  color: rgba(255,255,255,.92);
+  font-weight: 700;
+}
+
+.dressBody{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:18px;
+  align-items:start;
+  position: relative;
+  z-index: 1;
+}
+
+.dressImgWrap{
+  border-radius: 18px;
+  overflow:hidden;
+  border: 1px solid rgba(199,167,106,.45);
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  background: rgba(255,255,255,.06);
+}
+
+.dressImgWrap img{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+
+.dressText{
+  padding-top: 2px;
+}
+
+.dressQuote{
+  margin: 0;
+  color: rgba(255,255,255,.88);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+.dressLine{
+  border: none;
+  height: 1px;
+  margin: 14px 0;
+  background: linear-gradient(90deg, transparent, rgba(199,167,106,.85), transparent);
+}
+
+.dressNote{
+  margin: 0;
+  line-height: 1.7;
+  color: rgba(255,255,255,.92);
+}
+
+@media (max-width: 768px){
+  .dressBody{
+    grid-template-columns: 1fr;
+  }
+}
