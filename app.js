@@ -241,27 +241,44 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLB();
 
 
 // =====================
-// Scroll Reveal en orden (borroso → nítido)
+// Scroll Reveal (borroso → nítido) + Fallback móvil/WhatsApp
 // =====================
 const reveals = Array.from(document.querySelectorAll(".reveal"));
-let seq = 0;
 
-const io = new IntersectionObserver((entries) => {
-  entries
-    .filter(e => e.isIntersecting)
-    .sort((a, b) => a.target.offsetTop - b.target.offsetTop)
-    .forEach(entry => {
-      const el = entry.target;
-      io.unobserve(el);
+function showAllReveals(){
+  reveals.forEach(el => el.classList.add("show"));
+}
 
-      const delay = Math.min(seq * 90, 450);
-      seq++;
+if (!reveals.length) {
+  // nada que revelar
+} else if (!("IntersectionObserver" in window)) {
+  // Navegador viejo / webview raro
+  showAllReveals();
+} else {
+  let seq = 0;
+  const io = new IntersectionObserver((entries) => {
+    entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => a.target.offsetTop - b.target.offsetTop)
+      .forEach(entry => {
+        const el = entry.target;
+        io.unobserve(el);
 
-      setTimeout(() => el.classList.add("show"), delay);
-    });
-}, { threshold: 0.18 });
+        const delay = Math.min(seq * 90, 450);
+        seq++;
 
-reveals.forEach(el => io.observe(el));
+        setTimeout(() => el.classList.add("show"), delay);
+      });
+  }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+
+  reveals.forEach(el => io.observe(el));
+
+  // Fallback EXTRA: si después de 1.8s todavía no se mostró nada, lo mostramos todo.
+  setTimeout(() => {
+    const hidden = reveals.filter(el => !el.classList.contains("show")).length;
+    if (hidden === reveals.length) showAllReveals();
+  }, 1800);
+}
 
 
 // =====================

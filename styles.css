@@ -132,6 +132,13 @@ body{
   letter-spacing:2px;
 }
 
+/* ===== Fix iOS / WhatsApp: evita bugs de scroll con background-attachment ===== */
+@media (max-width: 900px), (hover: none) {
+  .hero{
+    background-attachment: scroll !important;
+  }
+}
+
 /* =========================
    BOTONES
 ========================= */
